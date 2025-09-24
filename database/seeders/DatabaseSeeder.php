@@ -18,6 +18,10 @@ class DatabaseSeeder extends Seeder
         $this->call(UserRoleTableSeeder::class);
         $this->call(MenuTableSeeder::class);
         $this->call(PrivilegeTableSeeder::class);
+        $this->call(JenisKelaminSeeder::class);
+        $this->call(NasabahSeeder::class);
+        $this->call(JenisRekeningSeeder::class);
+        $this->call(RekeningSeeder::class);
         
         // User::factory(10)->create();
 

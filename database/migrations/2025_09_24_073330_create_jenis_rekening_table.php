@@ -11,18 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('nasabah', function (Blueprint $table) {
+        Schema::create('jenis_rekening', function (Blueprint $table) {
             $table->string('id', 36)->primary();
-            $table->string('nama_nasabah');
-            $table->string('no_hp');
-            $table->string('nik');
-            $table->string('alamat');
-            $table->string('email');
-            $table->date('tgl_lahir');
-            $table->string('id_jenis_kelamin', 36);
-            $table->foreign('id_jenis_kelamin')->references('id')->on('jenis_kelamin')->cascadeOnUpdate()->restrictOnDelete();
-            $table->date('tgl_daftar');
-            $table->enum('is_aktif', [0,1])->default(1);
+            $table->string('jenis_rekening');
+            $table->string('kode_jenis_rekening');
             $table->timestamps();
             $table->softDeletes();
             $table->string('created_by', 36)->nullable();
@@ -36,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('nasabah');
+        Schema::dropIfExists('jenis_rekening');
     }
 };
