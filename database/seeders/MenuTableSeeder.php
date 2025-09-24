@@ -83,6 +83,16 @@ class MenuTableSeeder extends Seeder
             'parent_id' => $nasabah->id,
             'level'     => 2,
         ]);
+        Menu::create([
+            'menu'      => 'Daftar Rekening',
+            'module'    => 'rekening',
+            'routing'   => 'rekening.index',
+            'is_tampil' => 1,
+            'icon'      => 'fa fa-users',
+            'urutan'    => 3,
+            'parent_id' => $nasabah->id,
+            'level'     => 2,
+        ]);
         
         Menu::create([
             'menu'      => 'User',

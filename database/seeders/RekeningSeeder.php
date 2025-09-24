@@ -23,7 +23,6 @@ class RekeningSeeder extends Seeder
                 'no_rekening' => fake()->randomNumber(9),
                 'id_nasabah' => $row->id,
                 'id_jenis_rekening' => $jenis_rekening->id,
-                'is_utama' => 1,
             ]);
         }
     }

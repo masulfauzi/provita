@@ -43,7 +43,7 @@
                                 <div class="col-7">
                                 </div>
                                 <div class="col-2">
-                                    {!! button('rekening.create', $title) !!}  
+                                    {!! button('rekening.create', $title) !!}
                                 </div>
                             </div>
                         </div>
@@ -56,10 +56,10 @@
                                         <tr>
                                             <th width="15">No</th>
                                             <td>No Rekening</td>
-								<td>Nasabah</td>
-								<td>Jenis Rekening</td>
-								<td>Is Utama</td>
-								
+                                            <td>Nasabah</td>
+                                            <td>Jenis Rekening</td>
+                                            <td>Is Utama</td>
+
                                             <th width="20%">Aksi</th>
                                         </tr>
                                     </thead>
@@ -69,12 +69,12 @@
                                             <tr>
                                                 <td>{{ $no++ }}</td>
                                                 <td>{{ $item->no_rekening }}</td>
-									<td>{{ $item->id_nasabah }}</td>
-									<td>{{ $item->id_jenis_rekening }}</td>
-									<td>{{ $item->is_utama }}</td>
-									
+                                                <td>{{ $item->nasabah->nama_nasabah }}</td>
+                                                <td>{{ $item->jenisRekening->jenis_rekening }}</td>
+                                                <td>{{ $item->is_utama }}</td>
+
                                                 <td>
-                                                    {!! button('rekening.show','', $item->id) !!}
+                                                    {!! button('rekening.show', '', $item->id) !!}
                                                     {!! button('rekening.edit', $title, $item->id) !!}
                                                     {!! button('rekening.destroy', $title, $item->id) !!}
                                                 </td>
