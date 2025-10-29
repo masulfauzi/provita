@@ -33,7 +33,7 @@
                             <h4 class="header-title">Tabel Data {{ $title }}</h4>
                             <div class="row">
                                 <div class="col-3">
-                                    <form action="{{ route('nasabah.index') }}" method="get">
+                                    <form action="{{ route('akun.index') }}" method="get">
                                         <div class=" has-icon-left position-relative">
                                             <input type="text" class="form-control"
                                                 value="{{ request()->get('search') }}" name="search" placeholder="Search">
@@ -43,7 +43,7 @@
                                 <div class="col-7">
                                 </div>
                                 <div class="col-2">
-                                    {!! button('nasabah.create', $title) !!}
+                                    {!! button('akun.create', $title) !!}  
                                 </div>
                             </div>
                         </div>
@@ -55,14 +55,9 @@
                                     <thead>
                                         <tr>
                                             <th width="15">No</th>
-                                            <td>Nama Nasabah</td>
-                                            <td>No Hp</td>
-                                            <td>Email</td>
-                                            <td>Tgl Lahir</td>
-                                            <td>Jenis Kelamin</td>
-                                            <td>Tgl Daftar</td>
-                                            <td>Is Aktif</td>
-
+                                            <td>No Akun</td>
+								<td>Nama Akun</td>
+								
                                             <th width="20%">Aksi</th>
                                         </tr>
                                     </thead>
@@ -71,23 +66,18 @@
                                         @forelse ($data as $item)
                                             <tr>
                                                 <td>{{ $no++ }}</td>
-                                                <td>{{ $item->nama_nasabah }}</td>
-                                                <td>{{ $item->no_hp }}</td>
-                                                <td>{{ $item->email }}</td>
-                                                <td>{{ $item->tgl_lahir }}</td>
-                                                <td>{{ $item->jenisKelamin->jenis_kelamin }}</td>
-                                                <td>{{ $item->tgl_daftar }}</td>
-                                                <td>{{ $item->is_aktif ? 'Aktif' : 'Tidak Aktif' }}</td>
-
-                                                <td class="d-flex gap-1">
-                                                    {!! button('nasabah.show', '', $item->id) !!}
-                                                    {!! button('nasabah.edit', $title, $item->id) !!}
-                                                    {!! button('nasabah.destroy', $title, $item->id) !!}
+                                                <td>{{ $item->no_akun }}</td>
+									<td>{{ $item->nama_akun }}</td>
+									
+                                                <td>
+                                                    {!! button('akun.show','', $item->id) !!}
+                                                    {!! button('akun.edit', $title, $item->id) !!}
+                                                    {!! button('akun.destroy', $title, $item->id) !!}
                                                 </td>
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="11" class="text-center"><i>No data.</i></td>
+                                                <td colspan="4" class="text-center"><i>No data.</i></td>
                                             </tr>
                                         @endforelse
                                     </tbody>

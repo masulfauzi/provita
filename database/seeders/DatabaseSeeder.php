@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(NasabahSeeder::class);
         $this->call(JenisRekeningSeeder::class);
         $this->call(RekeningSeeder::class);
+        $this->call(AkunSeeder::class);
         
         // User::factory(10)->create();
 

@@ -136,16 +136,16 @@ class MenuTableSeeder extends Seeder
             'parent_id' => $dev->id,
             'level'     => 1,
         ]);
-        // Menu::create([
-        //     'menu'      => 'Storage',
-        //     'module'    => 'files',
-        //     'routing'   => 'files.index',
-        //     'is_tampil' => 1,
-        //     'icon'      => 'fa fa-box-open',
-        //     'urutan'    => 4,
-        //     'parent_id' => $dev->id,
-        //     'level'     => 1,
-        // ]);
+        Menu::create([
+            'menu'      => 'Jenis Akun',
+            'module'    => 'akun',
+            'routing'   => 'akun.index',
+            'is_tampil' => 1,
+            'icon'      => 'fa fa-box-open',
+            'urutan'    => 4,
+            'parent_id' => $ref->id,
+            'level'     => 1,
+        ]);
         Menu::create([
             'menu'      => 'Jenis File',
             'module'    => 'jenisfile',
